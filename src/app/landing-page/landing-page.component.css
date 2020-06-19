@@ -11,7 +11,8 @@
   }
 
   a {
-    text-decoration: none;
     font-size: 22px;
     color: black;
+    display: inline-block;
+    padding-left: 8px;
   }
