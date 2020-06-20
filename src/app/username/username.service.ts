@@ -64,4 +64,25 @@ export class UsernameService {
     });
     return promise
   }
+  getRepos(reponame:string){
+    interface ApiResponse {
+      name: string,
+      description: string,
+      html_url: string,
+      language: string,
+    }
+    let promise = new Promise ((resolve, reject) => {
+      this.http.get<ApiResponse>('https://api.github.com/search/repositories?q=${reponame}&per_page=1000 access_token=${this.token}')
+      .toPromise().then(
+        (results) => {
+          this.newRepo = results;
+          resolve();
+        },
+        (error) => {
+          reject();
+        }
+      );
+    });
+    return promise
+  }
 }

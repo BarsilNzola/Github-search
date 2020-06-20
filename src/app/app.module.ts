@@ -8,13 +8,15 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { GithubuserComponent } from './githubuser/githubuser.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
+import { GithubreposComponent } from './githubrepos/githubrepos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     GithubuserComponent,
-    NavbarComponent
+    NavbarComponent,
+    GithubreposComponent
   ],
   imports: [
     BrowserModule,
