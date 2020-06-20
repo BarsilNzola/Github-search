@@ -17,7 +17,7 @@ export class GithubuserComponent implements OnInit {
     getUserBy(username){
       this.UsernameService.searchUserName(username).then(
         (success) => {
-          this.user = this.UsernameService.newUser;
+          this.user = this.UsernameService.user;
         },
         (error) => {
           console.log(error)
@@ -38,6 +38,7 @@ export class GithubuserComponent implements OnInit {
       this.getUserBy(this.searchedUser)
     }
   ngOnInit(): void {
+
   }
 
 }

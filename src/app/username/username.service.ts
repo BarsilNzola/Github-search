@@ -9,14 +9,16 @@ import { Repository } from '../repository'
   providedIn: 'root'
 })
 export class UsernameService {
-  newUser: User
+  user: User
   userRepo: Repository;
   newRepo: any;
 
   private token = environment.token;
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { 
+    this.user = new User("","","","","",0);
+  }
 
-  searchUserName(user:string){
+  searchUserName(username:string){
     interface ApiResponse {
       login: string,
       name: string,
@@ -27,10 +29,10 @@ export class UsernameService {
     }
 
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>('https://api.github.com/users/${username}?access_token=${this.token}')
+      this.http.get<ApiResponse>(`https://api.github.com/users/${username}?access_token=${this.token}`)
       .toPromise().then(
         (results) => {
-          this.newUser = results;
+          this.user = results;
           resolve();
         },
         (error) => {
@@ -49,7 +51,7 @@ export class UsernameService {
       language: string,
     }
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>('https://api.github.com/users/${username}/repos?access_token=${this.token}')
+      this.http.get<ApiResponse>(`https://api.github.com/users/${username}?access_token=${this.token}`)
       .toPromise().then(
         (results) => {
           this.userRepo = results;
