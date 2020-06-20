@@ -1,7 +1,8 @@
 <div class="container-fluid">
-    <form>
+    <form #searchUser='ngForm' (ngSubmit)="submitUserName()">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search Github Username" {(ngModel)}="searchedUser" required> 
+            <input type="text" class="form-control" placeholder="Search Github Username" [(ngModel)]="searchedUser" name="username" required> 
         </div>
     </form>
+    <button type="submit">Search</button>
 </div>

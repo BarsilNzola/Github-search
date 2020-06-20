@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsernameService } from '../username/username.service';
 import { User } from '../user';
-import { Repository } from '../repository'
+import { Repository } from '../repository';
 
 @Component({
   selector: 'app-githubuser',
