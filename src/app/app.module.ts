@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { GithubuserComponent } from './githubuser/githubuser.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    GithubuserComponent
+    GithubuserComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
