@@ -5,10 +5,11 @@
         </div>
         <button type="submit">Search</button>
     </form>
+    <br>
     <div class="container row">
-        <div class="card-columns text-dark">
+        <div class="card-deck text-dark">
             <div *ngFor="let repo of repos">
-                <div class="card m-0.5 text-dark">
+                <div class="card text-dark">
                     <div class="text-center card-header">
                         <h4>{{repo.name}}</h4>
                     </div>

@@ -1,4 +1,20 @@
 .container-fluid {
     padding-top: 20px;
-    background-color: brown;
+    background-color: rgb(50, 20, 70);
+    padding-bottom: 20px;
+}
+
+img {
+    max-width: 200px;
+}
+
+#top {
+    text-align: center;
+    background-color: black;
+    font: white;
+}
+
+#info {
+    background-color: mediumseagreen;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
