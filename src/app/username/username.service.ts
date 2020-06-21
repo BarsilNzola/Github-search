@@ -25,6 +25,7 @@ export class UsernameService {
       location: string,
       html_url: string,
       public_repos: number,
+      created_at: Date
     }
 
     let promise = new Promise((resolve, reject) => {
@@ -48,6 +49,7 @@ export class UsernameService {
       description: string,
       html_url: string,
       language: string,
+      updated_at: Date,
     }
     let promise = new Promise((resolve, reject) => {
       this.http.get<ApiResponse>('https://api.github.com/users/' + username + '/repos?access_token=' + this.token)

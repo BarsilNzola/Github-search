@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3">
@@ -17,26 +18,26 @@
         <div class="col-md-9" id="ghi">
             <h1><strong>GITHUB INFORMATION</strong></h1>
             <h2>You can find me on Github:</h2>
-            <p><strong>Github Username: BarsilNzola</strong></p>
+            <p><strong>Github Username: {{user.login}}</strong></p>
             <p><strong>Gtithub Profile Photo:</strong>
-            <br><img src="assets/images/githubprof.png"> </p>
+            <br><img src="{{user.avatar_url}}"> </p>
             <div class="card" id="repos">
                 <p><strong>Github Repos:</strong></p>
                 <ol>
                     <li>Name: quotes-angular</li>
                     <ul>
                         <li>Description: angular app to upload quotes, downvote and upvote them</li>
-                        <li>Live Link: <a href="https://barsilnzola.github.io/quotes-angular/">https://barsilnzola.github.io/quotes-angular/</a></li>
+                        <li>Live Link: <a style="color: chartreuse;" href="https://barsilnzola.github.io/quotes-angular/">https://barsilnzola.github.io/quotes-angular/</a></li>
                     </ul>
                     <li>Name: yolomy</li>
                     <ul>
                         <li>Description: a static webpage for yolomy landing page</li>
-                        <li>Live Link: <a href="https://barsilnzola.github.io/yolomy/">https://barsilnzola.github.io/yolomy/</a></li>
+                        <li>Live Link: <a style="color: chartreuse;" href="https://barsilnzola.github.io/yolomy/">https://barsilnzola.github.io/yolomy/</a></li>
                     </ul>
                     <li>Name: pizzariba</li>
                     <ul>
                         <li>Description: a simple webpage to take pizza orders based on size, toppings, crust and quantity</li>
-                        <li>Live Link: <a href="https://barsilnzola.github.io/pizzariba/">https://barsilnzola.github.io/pizzariba/ </a></li>
+                        <li>Live Link: <a style="color: chartreuse;" href="https://barsilnzola.github.io/pizzariba/">https://barsilnzola.github.io/pizzariba/ </a></li>
                     </ul>
                 </ol>
             </div>
