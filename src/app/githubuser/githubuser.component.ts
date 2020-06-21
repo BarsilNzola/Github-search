@@ -13,19 +13,19 @@ export class GithubuserComponent implements OnInit {
   repos: any;
   searchedUser: string;
 
-  constructor(private UsernameService:UsernameService) { }
+  constructor(private usernameService:UsernameService) { }
     getUserBy(username){
-      this.UsernameService.searchUserName(username).then(
+      this.usernameService.searchUserName(username).then(
         (success) => {
-          this.user = this.UsernameService.user;
+          this.user = this.usernameService.newUser;
         },
         (error) => {
           console.log(error)
         }
       );
-      this.UsernameService.getUserRepos(username).then(
+      this.usernameService.getUserRepos(username).then(
         (success) => {
-          this.repos = this.UsernameService.userRepo;
+          this.repos = this.usernameService.userRepo;
           console.log(this.repos)
         },
         (error) => {
@@ -38,6 +38,7 @@ export class GithubuserComponent implements OnInit {
       this.getUserBy(this.searchedUser)
     }
   ngOnInit(): void {
+    this.getUserBy("BarsilNzola")
 
   }
 

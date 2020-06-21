@@ -5,6 +5,6 @@ export class User {
         public avatar_url: string,
         public location: string,
         public html_url: string,
-        public repos: number,
+        public public_repos: number,
     ){}
 }

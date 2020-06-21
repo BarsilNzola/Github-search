@@ -10,15 +10,16 @@ import { Repository } from '../repository';
 })
 export class GithubreposComponent implements OnInit {
   user: User;
-  repository: any;
+  repository: Repository;
+  repos: any;
   searchedRepo: string;
 
   constructor(private usernameService:UsernameService) { }
     getRepoBy(reponame){
       this.usernameService.getRepos(reponame).then(
         (success) => {
-          this.repository = this.usernameService.newRepo.items;
-          console.log(this.repository)
+          this.repos = this.usernameService.newRepo.items;
+          console.log(this.repos)
         },
         (error) => {
           console.log(error);

@@ -9,13 +9,12 @@ import { Repository } from '../repository'
   providedIn: 'root'
 })
 export class UsernameService {
-  user: User
+  newUser: User
   userRepo: Repository;
   newRepo: any;
-
   private token = environment.token;
+
   constructor(private http:HttpClient) { 
-    this.user = new User("","","","","",0);
   }
 
   searchUserName(username:string){
@@ -25,14 +24,14 @@ export class UsernameService {
       avatar_url: string,
       location: string,
       html_url: string,
-      repos: number,
+      public_repos: number,
     }
 
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(`https://api.github.com/users/${username}?access_token=${this.token}`)
+      this.http.get<ApiResponse>('https://api.github.com/users/' + username + '?access_token=' + this.token)
       .toPromise().then(
         (results) => {
-          this.user = results;
+          this.newUser = results;
           resolve();
         },
         (error) => {
@@ -51,7 +50,7 @@ export class UsernameService {
       language: string,
     }
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>(`https://api.github.com/users/${username}?access_token=${this.token}`)
+      this.http.get<ApiResponse>('https://api.github.com/users/' + username + '/repos?access_token=' + this.token)
       .toPromise().then(
         (results) => {
           this.userRepo = results;
@@ -72,7 +71,7 @@ export class UsernameService {
       language: string,
     }
     let promise = new Promise ((resolve, reject) => {
-      this.http.get<ApiResponse>('https://api.github.com/search/repositories?q=${reponame}&per_page=1000 access_token=${this.token}')
+      this.http.get<ApiResponse>(`https://api.github.com/search/repositories?q=${reponame}&per_page=1000 access_token=${this.token}`)
       .toPromise().then(
         (results) => {
           this.newRepo = results;
