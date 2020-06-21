@@ -20,6 +20,8 @@
                     <div class="card-footer">
                         <p><span class="repo-language-color" style="background-color: #2b7489"></span><b>Programming Language:</b>
                         {{repo.language}}</p>
+                        <p><b>Created on:</b> {{repo.created_at | date}}</p>
+                        <p><b>Updated:</b> {{repo.updated_at|timeAgo}}</p>
                     </div>
                 </div>
             </div>

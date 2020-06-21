@@ -9,6 +9,7 @@ import { GithubuserComponent } from './githubuser/githubuser.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { GithubreposComponent } from './githubrepos/githubrepos.component';
+import { TimeAgoPipe } from './time-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { GithubreposComponent } from './githubrepos/githubrepos.component';
     LandingPageComponent,
     GithubuserComponent,
     NavbarComponent,
-    GithubreposComponent
+    GithubreposComponent,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,
