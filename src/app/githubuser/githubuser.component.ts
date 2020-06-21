@@ -38,7 +38,7 @@ export class GithubuserComponent implements OnInit {
       this.getUserBy(this.searchedUser)
     }
   ngOnInit(): void {
-    this.getUserBy("BarsilNzola")
+    this.getUserBy("")
 
   }
 
