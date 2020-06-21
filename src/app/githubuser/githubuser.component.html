@@ -1,22 +1,29 @@
 <div class="container-fluid">
-    <form #searchUser='ngForm' (ngSubmit)="submitUserName()">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search Github Username" [(ngModel)]="searchedUser" name="username" required> 
+    <div class="row">
+        <div class="col-md-6">
+            <form #searchUser='ngForm' (ngSubmit)="submitUserName()">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search Github Username" [(ngModel)]="searchedUser" name="username" required> 
+                </div>
+            </form>
+            <button type="submit">Search</button>
+            <div class="container">
+                <div class="card">
+                    <div class="row">
+                        <div class="col">
+                            <img [src]="user.avatar_url">
+                        </div>
+                        <div class="col">
+                            <ul>
+                                <li>Username: {{ user.login }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </form>
-    <button type="submit">Search</button>
-</div>
-<div class="container-fluid">
-    <div class="card">
-        <div class="row">
-            <div class="col-md-5">
-                <img [src]="user.avatar_url">
-            </div>
-            <div class="col-md-7">
-                <ul>
-                    <li>Username: {{ user.login }}</li>
-                </ul>
-            </div>
+        <div class="col-md-6">
+            <app-githubrepos></app-githubrepos>
         </div>
     </div>
 </div>

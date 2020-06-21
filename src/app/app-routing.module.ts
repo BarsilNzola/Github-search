@@ -6,9 +6,10 @@ import { GithubreposComponent } from './githubrepos/githubrepos.component';
 
 
 const routes: Routes = [
+  
   { path: 'landing-page', component: LandingPageComponent},
   { path: 'githubuser', component: GithubuserComponent},
-  { path: 'gitubrepos', component: GithubreposComponent},
+  { path: 'gitubrepos', component: GithubreposComponent, outlet: "githubrepos"},
 ];
 
 @NgModule({
